@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="744.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195_project.controller.MainWindowController">
+    <top>
+        <MenuBar>
+            <Menu text="User">
+                <MenuItem fx:id="logoutMenuItem" onAction="#handleLogout" text="Log out" />
+                <MenuItem fx:id="exitMenuItem" onAction="#handleExit" text="Exit" />
+            </Menu>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+        </MenuBar>
+
+    </top>
+    <center>
+        <TabPane fx:id="mainTabPane">
+            <Tab fx:id="appointmentsTab" text="Appointments">
+                <VBox>
+                    <HBox spacing="30.0">
+                        <RadioButton fx:id="allRadio" selected="true" text="All">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="MonthWeek" />
+                     </toggleGroup></RadioButton>
+                        <RadioButton fx:id="monthlyRadio" text="Monthly" toggleGroup="$MonthWeek" />
+                        <RadioButton fx:id="weeklyRadio" text="Weekly" toggleGroup="$MonthWeek" />
+                  <VBox.margin>
+                     <Insets bottom="5.0" left="10.0" top="5.0" />
+                  </VBox.margin>
+                    </HBox>
+                    <TableView fx:id="appointmentsTable">
+                        <columns>
+                            <TableColumn fx:id="apptId" text="Appt ID" />
+                            <TableColumn fx:id="title" text="Title" />
+                            <TableColumn fx:id="description" text="Description" />
+                            <TableColumn fx:id="locationColumn" text="Location" />
+                            <TableColumn fx:id="contact" text="Contact" />
+                            <TableColumn fx:id="type" text="Type" />
+                            <TableColumn fx:id="start" prefWidth="162.48861694335938" text="Start Date and Time" />
+                            <TableColumn fx:id="end" prefWidth="147.0113525390625" text="End Date and Time" />
+                            <TableColumn fx:id="customerId" prefWidth="110.218505859375" text="Customer ID" />
+                            <TableColumn fx:id="userId" prefWidth="80.42584228515625" text="User ID" />
+                        </columns>
+                    </TableView>
+
+                    <HBox alignment="CENTER" prefHeight="24.0" prefWidth="277.0" spacing="40.0">
+                        <Button fx:id="addAppointmentBtn" onAction="#addAppointment" text="Add Appointment" />
+                        <Button fx:id="updateAppointmentBtn" onAction="#updateAppointment" text="Update Appointment" />
+                        <Button fx:id="deleteAppointmentBtn" onAction="#deleteAppointment" text="Delete Appointment" />
+                  <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
+                  <VBox.margin>
+                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                  </VBox.margin>
+                    </HBox>
+                </VBox>
+            </Tab>
+            <Tab fx:id="customersTab" text="Customers">
+            <content>
+                   <VBox prefHeight="450.0" prefWidth="633.0">
+                       <TableView fx:id="customerTable">
+                           <columns>
+                               <TableColumn fx:id="idColumn" text="ID" />
+                               <TableColumn fx:id="nameColumn" text="Name" />
+                               <TableColumn fx:id="addressColumn" text="Address" />
+                               <TableColumn fx:id="postalCodeColumn" text="Postal Code" />
+                               <TableColumn fx:id="phoneColumn" text="Phone" />
+                               <TableColumn fx:id="createdDateColumn" prefWidth="113.59457397460938" text="Created Date" />
+                               <TableColumn fx:id="createdByColumn" prefWidth="74.40536499023438" text="Created By" />
+                               <TableColumn fx:id="lastUpdateColumn" prefWidth="101.3131103515625" text="Last Update" />
+                               <TableColumn fx:id="lastUpdatedByColumn" prefWidth="133.21636962890625" text="Last Updated By" />
+                               <TableColumn fx:id="stateColumn" prefWidth="125.32232666015625" text="State/Province" />
+                               <TableColumn fx:id="countryColumn" prefWidth="105.3154296875" text="Country" />
+                           </columns>
+                       </TableView>
+                       <HBox alignment="CENTER" spacing="40.0">
+                           <Button fx:id="addCustomerBtn" onAction="#addCustomer" text="Add Customer" />
+                           <Button fx:id="updateCustomerBtn" onAction="#updateCustomer" text="Update Customer" />
+                           <Button fx:id="deleteCustomerBtn" onAction="#deleteCustomer" text="Delete Customer" />
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                       </HBox>
+                   </VBox>
+            </content>
+            </Tab>
+            <Tab fx:id="reportsTab" text="Reports">
+                <content>
+                    <VBox fx:id="reports2TableView">
+                        <Label text="Report 1:" />
+                        <TableView fx:id="reportsTableView">
+                            <columns>
+                                <TableColumn fx:id="monthColumn" text="Month" />
+                                <TableColumn fx:id="typeColumn" text="Type" />
+                                <TableColumn fx:id="countColumn" text="Count" />
+                            </columns>
+                        </TableView>
+                        <Label text="Report 2:" />
+                        <ComboBox fx:id="reportContactCBox" prefWidth="150.0" />
+                        <TableView fx:id="report2TableView">
+                            <columns>
+                                <TableColumn fx:id="r2AppointmentIdColumn" prefWidth="112.0" text="Appointment ID" />
+                                <TableColumn fx:id="r2TitleColumn" text="Title" />
+                                <TableColumn fx:id="r2TypeColumn" prefWidth="94.0" text="Type" />
+                                <TableColumn fx:id="r2DescriptionColumn" prefWidth="117.0" text="Description" />
+                                <TableColumn fx:id="r2StartColumn" prefWidth="180.0" text="Start Date and Time" />
+                                <TableColumn fx:id="r2EndColumn" prefWidth="188.0" text="End Date and Time" />
+                                <TableColumn fx:id="r2CustomerIdColumn" prefWidth="98.0" text="Customer ID" />
+                            </columns>
+                        </TableView>
+
+                        <Label text="Report 3:" />
+                        <TableView fx:id="report3TableView">
+                     <columns>
+                        <TableColumn fx:id="customerNameColumn" prefWidth="173.0" text="Customer Name" />
+                        <TableColumn fx:id="appointmentCountColumn" prefWidth="174.0" text="Appointment Count" />
+                     </columns></TableView>
+                    </VBox>
+                </content>
+            </Tab>
+
+
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+        </TabPane>
+    </center>
+</BorderPane>

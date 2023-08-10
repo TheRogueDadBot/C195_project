@@ -13,4 +13,9 @@
       <module name="C195_project" target="17" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="C195_project" options="--add-exports java.base/jdk.internal.icu.util=com.example.c195_project --add-exports javafx.controls/com.sun.javafx.charts=com.example.c195_project" />
+    </option>
+  </component>
 </project>

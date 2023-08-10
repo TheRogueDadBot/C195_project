@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195_project.controller.AppointmentFormController">
+    <children>
+        <VBox layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <children>
+                <HBox>
+                    <children>
+                        <RadioButton fx:id="allAppointmentsButton" text="All Appointments" />
+                        <RadioButton fx:id="monthlyAppointmentsButton" text="Monthly Appointments" />
+                        <RadioButton fx:id="weeklyAppointmentsButton" text="Weekly Appointments" />
+                    </children>
+                </HBox>
+                <TableView fx:id="appointmentsTable">
+                    <columns>
+                        <TableColumn fx:id="appointmentIdColumn" text="Appointment ID" />
+                        <TableColumn fx:id="customerIdColumn" text="Customer ID" />
+                        <TableColumn fx:id="contactIdColumn" text="Contact ID" />
+                        <!-- Add additional columns as needed -->
+                    </columns>
+                </TableView>
+                <HBox>
+                    <children>
+                        <Button fx:id="previousButton" text="<" />
+                        <Button fx:id="nextButton" text=">" />
+                    </children>
+                </HBox>
+                <HBox>
+                    <children>
+                        <Button fx:id="addAppointmentButton" text="Add Appointment" />
+                        <Button fx:id="modifyAppointmentButton" text="Modify Appointment" />
+                        <Button fx:id="deleteAppointmentButton" text="Delete Appointment" />
+                    </children>
+                </HBox>
+                <HBox>
+                    <children>
+                        <Label text="Contact Name:" />
+                        <ComboBox fx:id="contactNameComboBox" />
+                        <Label text="Customer Name:" />
+                        <ComboBox fx:id="customerNameComboBox" />
+                    </children>
+                </HBox>
+                <HBox>
+                    <children>
+                        <Label text="Start Time:" />
+                        <ComboBox fx:id="startTimeComboBox" />
+                        <Label text="End Time:" />
+                        <ComboBox fx:id="endTimeComboBox" />
+                    </children>
+                </HBox>
+                <HBox>
+                    <children>
+                        <Label text="Date:" />
+                        <DatePicker fx:id="datePicker" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
+
