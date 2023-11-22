@@ -1,35 +1,59 @@
 GlobalConsultScheduler
 
-Description
+Overview
 
-GlobalConsultScheduler is a sophisticated, GUI-based scheduling desktop application designed for a global consulting organization with operations across multiple countries and languages. 
-
-This application interfaces with an existing MySQL database to manage scheduling data, adhering to specific business requirements and multinational operational needs.
+The GlobalConsultScheduler is a Java-based desktop application designed for managing client schedules. Developed with JavaFX, it provides a user-friendly interface for managing appointments, customers, and user sessions. The application connects to a MySQL database, enabling efficient data storage and retrieval.
 
 Features
 
-Multilingual Support: Catering to users in Phoenix, White Plains, Montreal, and London, with provisions for multiple language interfaces.
+Appointment Management: Create, update, and delete appointments. View appointments by week, month, or all.
 
-Seamless Database Integration: Efficiently pulls data from a pre-existing MySQL database without altering its structure.
+Customer Management: Add, edit, and delete customer records.
 
-Advanced Scheduling Capabilities: Facilitates the scheduling of appointments, meetings, and events across different time zones and regional offices.
+User Authentication: Handle user login and maintain user sessions.
 
-Read-Only Country and Division Data: Utilizes annually updated, third-party data for country and first-level division information.
+Database Interaction: Perform CRUD operations on appointments and customers.
 
-User-Friendly Interface: A clean and intuitive graphical user interface based on provided mock-ups.
+Localization: Support for different time zones and locales.
 
-Installation
+Reporting: Generate various reports like appointment types by month, schedules by contact, and customer appointment frequencies.
 
-Follow these steps to install the GlobalConsultScheduler:
+Prerequisites
 
-Download the latest release from the GitHub repository.
+Java JDK 11 or above.
 
-Extract the contents of the downloaded package.
+JavaFX SDK.
 
-Run the installation executable and follow the on-screen prompts.
+MySQL Server and JDBC driver.
 
-Usage
+Setup and Installation
 
-Upon successful installation, launch the application and log in. Users can view and manage schedules, with options to filter based on region, language, and other relevant criteria. 
+Database Setup:
 
-For detailed guidance, refer to the UserManual.pdf in the documentation folder.
+Ensure MySQL Server is installed and running.
+
+Create a database named client_schedule.
+
+Use the provided SQL scripts to create and populate tables.
+
+Application Configuration:
+
+Update the JDBC URL, username, and password in JDBC.java to match your database credentials.
+
+Ensure the JavaFX SDK is configured in your project.
+
+Running the Application:
+
+Compile and run Main.java.
+
+Database Connection
+
+The application connects to a MySQL database using JDBC. The JDBC class in the helper package manages the database connection, opening, and closing operations. Update the database URL, username, and password in this class as per your MySQL setup.
+
+User Session Management
+
+UserSession is a singleton class responsible for managing the logged-in user's session. It stores the username and ensures that only one session is active at a time.
+
+Contribution
+
+Feel free to fork this repository and contribute to the project. Please follow the existing code style and naming conventions.
