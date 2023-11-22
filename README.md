@@ -2,25 +2,39 @@ GlobalConsultScheduler
 
 Overview
 
-The GlobalConsultScheduler is a Java-based desktop application designed for managing client schedules. Developed with JavaFX, it provides a user-friendly interface for managing appointments, customers, and user sessions. The application connects to a MySQL database, enabling efficient data storage and retrieval.
+GlobalConsultScheduler is a sophisticated, GUI-based scheduling desktop application designed for a global consulting organization. Developed with JavaFX and interfacing with a MySQL database, it streamlines scheduling across multiple countries and languages, adhering to specific business requirements and multinational operational needs.
+
+Development Environment
+
+IDE: IntelliJ Community 2022.2.3
+
+JDK version: 17.0.6
+
+JavaFX version: 20.0.1
+
+MySQL Connector driver Version: mysql-connector-java-8.0.33
 
 Features
 
-Appointment Management: Create, update, and delete appointments. View appointments by week, month, or all.
+Multilingual Support: Catering to users in Phoenix, White Plains, Montreal, and London.
 
-Customer Management: Add, edit, and delete customer records.
+Database Integration: Efficient MySQL database integration.
 
-User Authentication: Handle user login and maintain user sessions.
+Scheduling: Manage appointments, meetings, and events across time zones and offices.
 
-Database Interaction: Perform CRUD operations on appointments and customers.
+Read-Only Country and Division Data: Uses updated, third-party country and division information.
 
-Localization: Support for different time zones and locales.
+User Interface: Intuitive and user-friendly based on provided mock-ups.
 
-Reporting: Generate various reports like appointment types by month, schedules by contact, and customer appointment frequencies.
+Appointment Management: Create, update, delete, and view appointments to avoid scheduling overlaps.
+
+Customer Management: Add, update, and delete customer records.
+
+Reporting: Includes a report that counts the number of appointments for each customer.
 
 Prerequisites
 
-Java JDK 11 or above.
+Java JDK 11 or higher.
 
 JavaFX SDK.
 
@@ -28,23 +42,23 @@ MySQL Server and JDBC driver.
 
 Setup and Installation
 
-Database Setup:
+ Database Setup:
 
-Ensure MySQL Server is installed and running.
+ Ensure MySQL Server is installed and running.
 
-Create a database named client_schedule.
+ Create a database named client_schedule.
 
-Use the provided SQL scripts to create and populate tables.
+ Use the provided SQL scripts to create and populate tables.
 
-Application Configuration:
+ Application Configuration:
 
-Update the JDBC URL, username, and password in JDBC.java to match your database credentials.
+ Update the JDBC URL, username, and password in JDBC.java to match your database credentials.
 
-Ensure the JavaFX SDK is configured in your project.
+ Ensure the JavaFX SDK is configured in your project.
 
-Running the Application:
+ Running the Application:
 
-Compile and run Main.java.
+ Compile and run Main.java.
 
 Database Connection
 
@@ -57,3 +71,23 @@ UserSession is a singleton class responsible for managing the logged-in user's s
 Contribution
 
 Feel free to fork this repository and contribute to the project. Please follow the existing code style and naming conventions.
+
+Usage
+
+Launch the application from the Main class.
+
+Log in using user information from the database.
+
+Navigate between Appointments, Customers, and Reports tabs to manage data.
+
+Log out via the logout button on the Appointments tab or close the application.
+
+For detailed instructions, refer to UserManual.pdf in the documentation folder.
+
+Additional Notes
+
+The application ensures that scheduling overlaps do not occur.
+
+It alerts the user of any upcoming appointments.
+
+If there are no appointments for a customer, they will not appear in the reports.
